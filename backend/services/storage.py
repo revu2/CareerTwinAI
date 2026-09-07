@@ -37,7 +37,7 @@ class StorageService:
             """)
             conn.commit()
 
-            # Ensure default profile exists
+            # Ensure default profile exists with clean initial state
             cursor.execute("SELECT id FROM profiles WHERE id = 'default_student'")
             if not cursor.fetchone():
                 default_profile = StudentProfile(
@@ -46,14 +46,17 @@ class StorageService:
                     degree="B.Tech",
                     branch="Computer Science Engineering",
                     year_of_study="3rd Year",
-                    cgpa=8.0,
-                    current_skills=["Python", "SQL", "HTML", "CSS", "JavaScript"],
-                    projects=["Web Development Portfolio Project", "Student Performance Predictor in Python"],
-                    certifications=["Python Programming Fundamentals", "Database Foundations"],
-                    career_interests=["Artificial Intelligence", "Machine Learning"],
-                    target_career="AI Engineer",
-                    dream_company="Top Tech / AI Labs",
-                    readiness_score=48.0
+                    cgpa=None,
+                    current_skills=[],
+                    projects=[],
+                    certifications=[],
+                    career_interests=[],
+                    target_career="Software Engineer",
+                    dream_company="",
+                    job_description="",
+                    resume_filename="",
+                    raw_resume_text="",
+                    readiness_score=0.0
                 )
                 cursor.execute(
                     "INSERT INTO profiles (id, data) VALUES (?, ?)",
@@ -71,7 +74,16 @@ class StorageService:
                 return StudentProfile(**data_dict)
             
             if profile_id == "default_student":
-                profile = StudentProfile(id="default_student", name="")
+                profile = StudentProfile(
+                    id="default_student",
+                    name="",
+                    target_career="Software Engineer",
+                    readiness_score=0.0,
+                    resume_filename="",
+                    current_skills=[],
+                    projects=[],
+                    certifications=[]
+                )
                 self.save_profile(profile)
                 return profile
             return None

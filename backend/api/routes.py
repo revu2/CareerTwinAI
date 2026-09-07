@@ -223,12 +223,16 @@ async def run_full_orchestration():
 
 @router.get("/orchestrate/latest", response_model=OrchestrationResult)
 async def get_latest_orchestration():
+    profile = storage_service.get_profile("default_student")
+    if not profile or (not profile.current_skills and not profile.projects and not profile.resume_filename):
+        empty_prof = profile or StudentProfile(id="default_student", name="", target_career="Software Engineer", readiness_score=0.0)
+        result = orchestrator.execute_pipeline(empty_prof)
+        return result
+
     cached = storage_service.get_state("latest_orchestration")
     if cached:
         return OrchestrationResult(**cached)
     
-    # If not cached, execute now
-    profile = storage_service.get_profile("default_student") or StudentProfile(id="default_student", name="", target_career="Software Engineer")
     result = orchestrator.execute_pipeline(profile)
     storage_service.save_state("latest_orchestration", result.model_dump())
     return result
