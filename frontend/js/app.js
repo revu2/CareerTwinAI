@@ -29,9 +29,97 @@ document.addEventListener('DOMContentLoaded', async () => {
   initLucide();
   setupNavigation();
   setupEventListeners();
+  renderInitialCleanState();
   await checkSystemStatus();
   await resetProfileToNewAnalysis(true);
 });
+
+function renderInitialCleanState() {
+  const headerRole = document.getElementById('headerTargetRole');
+  if (headerRole) headerRole.textContent = "Software Engineer";
+
+  const headerBadge = document.getElementById('headerReadinessBadge');
+  if (headerBadge) headerBadge.textContent = "0% Readiness";
+
+  const resumeBadge = document.getElementById('resumeStatusBadgeContainer');
+  if (resumeBadge) {
+    resumeBadge.innerHTML = `
+      <span class="text-[11px] px-3 py-1 rounded-full bg-slate-900 text-slate-400 border border-slate-800 flex items-center gap-1.5">
+        <i data-lucide="file" class="w-3.5 h-3.5 text-slate-500"></i> No resume uploaded
+      </span>
+    `;
+  }
+
+  const uploadBtnText = document.getElementById('uploadResumeBtnText');
+  if (uploadBtnText) uploadBtnText.textContent = "Select Resume PDF";
+
+  const greetingEl = document.getElementById('dashCandidateGreeting');
+  if (greetingEl) greetingEl.textContent = "Your Career Digital Twin";
+
+  const summaryEl = document.getElementById('dashProfileSummary');
+  if (summaryEl) summaryEl.textContent = "Digital Twin is in a clean initial state. Upload your resume and select a target career role to calculate your AI readiness score.";
+
+  const scoreEl = document.getElementById('dashReadinessScore');
+  if (scoreEl) scoreEl.textContent = "0%";
+
+  const stageEl = document.getElementById('dashCareerStageBadge');
+  if (stageEl) stageEl.textContent = "Initial Baseline / Awaiting Resume";
+
+  const targetEl = document.getElementById('dashTargetGoal');
+  if (targetEl) targetEl.textContent = "Software Engineer";
+
+  const skillsScoreEl = document.getElementById('scorePartSkills');
+  const barSkillsEl = document.getElementById('barPartSkills');
+  if (skillsScoreEl && barSkillsEl) {
+    skillsScoreEl.textContent = "0.0 / 40";
+    barSkillsEl.style.width = "0%";
+  }
+
+  const projScoreEl = document.getElementById('scorePartProjects');
+  const barProjEl = document.getElementById('barPartProjects');
+  if (projScoreEl && barProjEl) {
+    projScoreEl.textContent = "0.0 / 25";
+    barProjEl.style.width = "0%";
+  }
+
+  const eduScoreEl = document.getElementById('scorePartEdu');
+  const barEduEl = document.getElementById('barPartEdu');
+  if (eduScoreEl && barEduEl) {
+    eduScoreEl.textContent = "0.0 / 15";
+    barEduEl.style.width = "0%";
+  }
+
+  const gapsScoreEl = document.getElementById('scorePartGaps');
+  const barGapsEl = document.getElementById('barPartGaps');
+  if (gapsScoreEl && barGapsEl) {
+    gapsScoreEl.textContent = "0.0 / 20";
+    barGapsEl.style.width = "0%";
+  }
+
+  const explainEl = document.getElementById('scoreExplanationText');
+  if (explainEl) explainEl.textContent = "No resume or skills analyzed yet. Upload a PDF resume or enter skills above to calculate your deterministic readiness score.";
+
+  const recListEl = document.getElementById('scoreRecommendationsList');
+  if (recListEl) recListEl.innerHTML = "";
+
+  const strengthsContainer = document.getElementById('dashTopStrengths');
+  if (strengthsContainer) {
+    strengthsContainer.innerHTML = '<li class="text-xs text-slate-400">Upload your PDF resume to verify skills.</li>';
+  }
+
+  const gapsContainer = document.getElementById('dashMajorGaps');
+  if (gapsContainer) {
+    gapsContainer.innerHTML = '<li class="text-xs text-slate-400">Select target role and upload resume to analyze gaps.</li>';
+  }
+
+  renderRadarChart('dashRadarChartCanvas', {
+    categories: ['Languages', 'Frameworks', 'Databases', 'Cloud', 'System Design', 'CS Fundamentals'],
+    student_scores: [0, 0, 0, 0, 0, 0],
+    benchmark_scores: [90, 85, 80, 75, 80, 85]
+  });
+
+  initLucide();
+}
 
 function initLucide() {
   if (window.lucide) {

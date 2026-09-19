@@ -79,7 +79,7 @@
           <span class="text-slate-400">Target Role:</span>
           <span id="headerTargetRole" class="text-indigo-300 font-bold">Software Engineer</span>
           <span class="text-slate-600">•</span>
-          <span id="headerReadinessBadge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-600 text-white">48% Readiness</span>
+          <span id="headerReadinessBadge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">0% Readiness</span>
         </div>
       </div>
 
@@ -221,7 +221,7 @@
               B.Tech in Computer Science Engineering • 3rd Year
             </p>
             <p id="dashProfileSummary" class="text-xs text-slate-300 leading-relaxed max-w-2xl">
-              Evaluating student skills and orchestrating specialized AI analysis to formulate your personalized career strategy...
+              Digital Twin is in a clean initial state. Upload your resume and select a target career role to calculate your AI readiness score.
             </p>
 
             <div class="flex flex-wrap gap-2.5 pt-2">
@@ -241,10 +241,10 @@
           <div class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">2. AI-Estimated Readiness Score</span>
             <div class="text-4xl sm:text-5xl font-extrabold text-gradient-primary" id="dashReadinessScore">
-              48%
+              0%
             </div>
-            <span id="dashCareerStageBadge" class="text-[11px] font-bold px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mt-2">
-              Pre-Specialization Foundation
+            <span id="dashCareerStageBadge" class="text-[11px] font-bold px-3 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 mt-2">
+              Initial Baseline / Awaiting Resume
             </span>
             <span class="text-[10px] text-slate-400 mt-2">Target Role: <strong id="dashTargetGoal" class="text-slate-200">Software Engineer</strong></span>
           </div>
@@ -271,10 +271,10 @@
           <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
             <div class="flex items-center justify-between text-xs">
               <span class="font-bold text-slate-300">Required Skills</span>
-              <span class="font-extrabold text-indigo-400" id="scorePartSkills">20.0 / 40</span>
+              <span class="font-extrabold text-indigo-400" id="scorePartSkills">0.0 / 40</span>
             </div>
             <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div id="barPartSkills" class="bg-indigo-500 h-full rounded-full transition-all duration-500" style="width: 50%"></div>
+              <div id="barPartSkills" class="bg-indigo-500 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
             </div>
             <span class="text-[10px] text-slate-400 block">40% Weight (Role & JD match)</span>
           </div>
@@ -283,10 +283,10 @@
           <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
             <div class="flex items-center justify-between text-xs">
               <span class="font-bold text-slate-300">Projects & Experience</span>
-              <span class="font-extrabold text-cyan-400" id="scorePartProjects">19.0 / 25</span>
+              <span class="font-extrabold text-cyan-400" id="scorePartProjects">0.0 / 25</span>
             </div>
             <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div id="barPartProjects" class="bg-cyan-500 h-full rounded-full transition-all duration-500" style="width: 76%"></div>
+              <div id="barPartProjects" class="bg-cyan-500 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
             </div>
             <span class="text-[10px] text-slate-400 block">25% Weight (Practical experience)</span>
           </div>
@@ -295,10 +295,10 @@
           <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
             <div class="flex items-center justify-between text-xs">
               <span class="font-bold text-slate-300">Education & Certs</span>
-              <span class="font-extrabold text-emerald-400" id="scorePartEdu">13.0 / 15</span>
+              <span class="font-extrabold text-emerald-400" id="scorePartEdu">0.0 / 15</span>
             </div>
             <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div id="barPartEdu" class="bg-emerald-500 h-full rounded-full transition-all duration-500" style="width: 86%"></div>
+              <div id="barPartEdu" class="bg-emerald-500 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
             </div>
             <span class="text-[10px] text-slate-400 block">15% Weight (Degree, CGPA, Certs)</span>
           </div>
@@ -307,10 +307,10 @@
           <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
             <div class="flex items-center justify-between text-xs">
               <span class="font-bold text-slate-300">Role Alignment</span>
-              <span class="font-extrabold text-rose-400" id="scorePartGaps">14.0 / 20</span>
+              <span class="font-extrabold text-rose-400" id="scorePartGaps">0.0 / 20</span>
             </div>
             <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div id="barPartGaps" class="bg-rose-500 h-full rounded-full transition-all duration-500" style="width: 70%"></div>
+              <div id="barPartGaps" class="bg-rose-500 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
             </div>
             <span class="text-[10px] text-slate-400 block">20% Weight (Missing skill penalty)</span>
           </div>
@@ -320,7 +320,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
           <div class="p-4 rounded-2xl bg-slate-900/70 border border-slate-800 text-xs text-slate-300 space-y-1.5">
             <span class="text-[11px] font-bold text-indigo-300 uppercase tracking-wider block">Score Evaluation Rationale:</span>
-            <p id="scoreExplanationText" class="leading-relaxed text-slate-300">Evaluating candidate skills against target role benchmarks...</p>
+            <p id="scoreExplanationText" class="leading-relaxed text-slate-300">No resume or skills analyzed yet. Upload a PDF resume or enter skills above to calculate your deterministic readiness score.</p>
           </div>
 
           <div class="p-4 rounded-2xl bg-slate-900/70 border border-slate-800 text-xs text-slate-300 space-y-1.5">
