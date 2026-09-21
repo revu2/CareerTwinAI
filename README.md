@@ -3,6 +3,9 @@
 
 **CareerTwin AI** is an intelligent, multi-agent AI career digital twin platform designed specifically for students and early-career job seekers. It mirrors a student's academic and technical identity, benchmarks their capabilities against industry requirements for target career roles, pinpoints skill gaps, generates milestone roadmaps, conducts interactive mock interviews, optimizes resumes with Google STAR/XYZ impact metrics, and matches opportunities.
 
+## 🚀 Live Demo
+
+[Open CareerTwin AI](https://careertwinai-production.up.railway.app)
 ---
 
 ## 🌟 Key Features
